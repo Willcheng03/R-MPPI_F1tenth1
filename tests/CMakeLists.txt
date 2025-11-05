@@ -10,7 +10,7 @@ set(HEADER_PATH ${CMAKE_CURRENT_SOURCE_DIR}/templated_headers/)
 set(TEST_MAP_FOLDER "${PROJECT_BINARY_DIR}")
 set(TEST_NETWORK_FOLDER "${PROJECT_BINARY_DIR}")
 
-if(BUILD_TESTS)
+if(MPPI_BUILD_TESTS)
     message("")
     find_package(PythonInterp)
 
@@ -24,7 +24,7 @@ if(BUILD_TESTS)
     message("")
 endif()
 
-if(BUILD_TESTS)
+if(MPPI_BUILD_TESTS)
     message("")
     find_package(PythonInterp)
 

@@ -185,6 +185,8 @@ public:
   }
 };
 
+template <int C_DIM, int MAX_DISTRIBUTIONS_T>
+const int GaussianParamsImpl<C_DIM, MAX_DISTRIBUTIONS_T>::MAX_DISTRIBUTIONS;
 }  // namespace sampling_distributions
 }  // namespace mppi
 
