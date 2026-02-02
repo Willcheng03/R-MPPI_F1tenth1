@@ -15,6 +15,8 @@ project(MPPI-Generic VERSION 0.9.0 LANGUAGES C CXX CUDA)
 ####################################
 option(MPPI_BUILD_TESTS "Build unit tests." OFF)
 option(MPPI_BUILD_EXAMPLES "Build example code." OFF)
+option(MPPI_BUILD_PYTHON "Build python bindings." OFF)
+
 option(MPPI_USE_CCACHE "Use ccache (when available) to potentially speed up repeated builds" ON)
 option(MPPI_USE_CUDA_BARRIERS "Compile MPPI-Generic with cuda barrier support. Turn off for GPUs older than the 20 series." ON)
 option(MPPI_USE_CUDA_BARRIERS_COST "Compile MPPI-Generic with cuda barriers for cost-only kernels when general barrier support is enabled." OFF)
@@ -192,6 +194,11 @@ install(FILES
 if (MPPI_BUILD_TESTS OR MPPI_BUILD_EXAMPLES)
     add_subdirectory(src)
 endif()
+
+if (MPPI_BUILD_PYTHON)
+  add_subdirectory(python python_build)
+endif()
+
 if (MPPI_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
@@ -255,3 +262,5 @@ if(NOT TARGET uninstall)
   add_custom_target(uninstall
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
+
+
