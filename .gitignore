@@ -54,3 +54,6 @@ resource
 # video files
 *.mp4
 *.mpeg
+
+# local builds
+build*/
