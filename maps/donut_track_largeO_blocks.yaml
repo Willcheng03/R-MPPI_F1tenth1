@@ -1,0 +1,9 @@
+image: donut_track_largeO_blocks.png
+resolution: 0.05
+origin:
+- -22.5
+- -22.5
+- 0.0
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
